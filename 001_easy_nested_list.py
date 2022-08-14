@@ -21,8 +21,8 @@ There will always be one or more students having the second lowest grade.
 
 Output:
 ------------
-Print the name(s) of any student(s) having the second lowest grade in. 
-If there are multiple students, order their names alphabetically and print each one on a new line.
+Print the name(s) of any student(s) having the second lowest grade in
+If there are multiple students, order their names alphabetically and print each one on a new line,
 """
 
 if __name__ == '__main__':
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     # create a list for the lowest students because it can be *multiple*
     # iterate over each student and check if the grade matches, if so append the name
     lowest_students = []
-    
+
     for student in students_grades:
         if second_lowest_grade == student[1]:
             lowest_students.append(student[0])
