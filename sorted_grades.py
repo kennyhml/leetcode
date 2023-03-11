@@ -35,7 +35,7 @@ if __name__ == '__main__':
         students_grades.append([name, grade])
     
     # create a new *set* of each students sorted grades
-    sorted_grades = sorted(list(set(i[1] for i in students_grades)))
+    sorted_grades = sorted(list({i[1] for i in students_grades}))
     second_lowest_grade = sorted_grades[1]
 
     # create a list for the lowest students because it can be *multiple*
