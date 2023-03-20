@@ -14,15 +14,9 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def inorderTraversal(root: Optional[TreeNode], values=None) -> list[int]:
+
+def inorderTraversal(root: Optional[TreeNode]) -> list[int]:
     if root is None:
         return []
 
-    if values is None:
-        values = []
-
-    inorderTraversal(root.left, values)
-    values.append(root.val)
-    inorderTraversal(root.right, values)
-
-    return values
+    return inorderTraversal(root.left) + [root.val] + inorderTraversal(root.right)
