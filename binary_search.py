@@ -19,6 +19,7 @@ I used recursion to implement this, because to me it just feels more suitable fo
 also be done iteratively, and is arguably a tiny little bit faster because of the recursive callstack.
 """
 
+
 sample_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20]
 
 # This was my initial attempt, which worked for most cases. I also began to realize that building new
@@ -80,3 +81,5 @@ def binary_search(arr, value, low=0, high=None) -> int:
 #  L     ^        H   note: middle is always low + high // 2, so here its (0 + 5) // 2 which is 2
 #
 # Middle value is 4, we found our value at index 2!
+
+
