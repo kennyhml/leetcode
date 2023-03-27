@@ -27,3 +27,4 @@ def find_complement_1(num: int) -> int:
 def find_complement(num: int) -> int:
 
     return num ^ 2 ** num.bit_length() - 1
+
