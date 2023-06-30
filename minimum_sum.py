@@ -10,6 +10,13 @@ Return the minimum possible sum of new1 and new2.
 
 
 def minimumSum(num: int) -> int:
+    """
+    To solve this I had to understand that the first number has to be the smallest
+    number + the biggest number, and the second number has to be the remaining 2
+    in sorted order.
+    """
+
+
     nums = [*str(num)]
     nums.sort()
 
