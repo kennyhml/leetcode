@@ -33,3 +33,4 @@ def groupAnagrams(strs: list[str]) -> list[list[str]]:
             arr.append(word)
 
     return groups.values()
+
