@@ -24,7 +24,6 @@ adjacent nodes are safe, if they are not then we know the node is visited, but n
 If all of the adjacent nodes are safe, the node is safe.
 """
 
-
 def eventualSafeNodes(graph: list[list[int]]) -> list[int]:
     n = len(graph)
     visited = [0] * n # 0 = not visited, 1 = visited, 2 = safe
