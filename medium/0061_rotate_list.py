@@ -3,16 +3,34 @@ Given the head of a linked list, rotate the list to the right by k places.
 
 EXPLANATION:
 
-First we need to find the length of the linked list, so that we can check the 'true'
+Lets understand how we rotate the list, given the following:
+
+Input: head = [1,2,3,4,5], k = 2
+
+If we shift every node by k (2) places, the list ends up looking like [4,5,1,2,3]
+So as we can see, every node has been shifted by k places, i.e 1 was previously at
+0 and is now at 2, when a value is at the end of the list and it gets shifted, it
+has to wrap around.
+
+However shifting every value indidually would be expensive, so its faster to look for a
+pattern here, notice how when we rotate the array by k places, we are essentially just 
+slicing it at length - k and putting that section in front, for the above example
+
+length = 5, k = 2
+steps = length - k - 1 = 2
+I dont take the -1 in my code because I start taking the steps from the tail intead of the head
+
+1 > 2 > 3 > 4 > 5         1 > 2 > 3 X 4 > 5          4 > 5 > 1 > 2 > 3
+        ↑           ->    ↑           ↑         ->   ↑       ↑
+      steps              head       new head      new head  head
+
+
+So, first we need to find the length of the linked list, so that we can check the 'true'
 k in case k is bigger than the length of the list meaning it wraps around.
 
-Once thats done we can make the list circular temporarily as it will help a ton
-to rotate it later, and we already have the last node from counting the length
+Then we make the list cirular to establish the connection between the two slices we will have
+later on and we already have the last node from counting the length
 anyway.
-
-We then compute the amount of nodes we have to walk, since we are currently at the tail node
-the new head will be at position length - k, i.e if our linked list is 10 nodes long and
-k is 4, then the 6th node will be our new tail and the 7th node will be our new head
 """
 
 from typing import Optional
@@ -35,15 +53,15 @@ def rotateRight(head: Optional[ListNode], k: int) -> Optional[ListNode]:
     k %= length
     if k == 0:
         return head
-
-    # Make the list temporarily cirular
+    
     curr.next = head
-
     steps = length - k
     while steps > 0:
         curr = curr.next
         steps -= 1
 
+    # set our new head and break the old connection to this head
+    # since we made the list circular before we still have it all connected
     new_head = curr.next
     curr.next = None
 
