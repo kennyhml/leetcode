@@ -24,3 +24,4 @@ def maxScore(s: str) -> int:
         best = max(best, score)
         
     return best
+
