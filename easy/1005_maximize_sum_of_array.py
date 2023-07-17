@@ -26,7 +26,6 @@ def largestSumAfterKNegations(nums: list[int], k: int) -> int:
 
     return sum(nums)
 
-# without heap
 def largestSumAfterKNegations(nums: list[int], k: int) -> int:
     nums.sort()
 
