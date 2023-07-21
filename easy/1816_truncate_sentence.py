@@ -8,3 +8,4 @@ first k​​​​​​ words. Return s​​​​​​ after truncating it.
 """
 def truncateSentence(s: str, k: int) -> str:
     return ' '.join(s.split(" ")[:k])
+
