@@ -29,3 +29,6 @@ def modifyString(s: str) -> str:
         s[i] = find_char(left, right)
 
     return "".join(s)
+
+from collections import deque
+
