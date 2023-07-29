@@ -33,3 +33,7 @@ def maxAbsoluteSum(nums: list[int]) -> int:
         res = max(res, curr_max, -curr_min)
 
     return res
+
+
+f = lambda x: while True: print("hi")
+print(f(10))
